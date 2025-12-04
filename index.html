@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberTraining - Segurança da Informação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="home-screen" class="screen active">
+        <h1>🛡️ Protocolo Zero: Treinamento de Segurança</h1>
+        <p>Bem-vindo, agente. Sua missão é proteger os dados da organização.</p>
+        <p>Complete as missões de treinamento para desbloquear o teste final.</p>
+        <button onclick="startTraining()" class="btn-start">Iniciar Missão</button>
+    </div>
+
+    <div id="mission-screen" class="screen hidden">
+        <div class="progress-bar">
+            <div id="progress-fill"></div>
+        </div>
+        <h2 id="mission-title">Missão 1</h2>
+        <div id="mission-content" class="content-box">
+            </div>
+        <div class="navigation">
+            <button onclick="nextMission()" id="btn-next">Próxima Fase</button>
+        </div>
+    </div>
+
+    <div id="quiz-screen" class="screen hidden">
+        <h2>📝 Avaliação Final</h2>
+        <p>Responda corretamente para obter sua certificação (Mínimo 70%).</p>
+        <div id="quiz-container">
+            </div>
+        <button onclick="submitQuiz()" class="btn-submit">Enviar Respostas</button>
+    </div>
+
+    <div id="result-screen" class="screen hidden">
+        <div id="fail-msg" class="hidden">
+            <h2 style="color: red;">❌ Missão Falhou</h2>
+            <p>Sua pontuação foi: <span id="score-val"></span>%</p>
+            <p>Você precisa de 70% para passar.</p>
+            <button onclick="restartQuiz()">Tentar Novamente</button>
+        </div>
+
+        <div id="success-msg" class="hidden">
+            <h2 style="color: #0f0;">✅ Missão Cumprida!</h2>
+            <p>Pontuação: <span id="final-score"></span>%</p>
+            <div class="cert-form">
+                <p>Para emitir seu certificado, informe seus dados:</p>
+                <input type="text" id="user-name" placeholder="Nome Completo">
+                <input type="email" id="user-email" placeholder="E-mail">
+                <button onclick="generateCertificate()">Gerar Certificado</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="certificate-print" class="hidden">
+        <div class="cert-border">
+            <h1>CERTIFICADO DE CONCLUSÃO</h1>
+            <p>Certificamos que</p>
+            <h2 id="cert-name">Nome do Aluno</h2>
+            <p>Concluiu com êxito o treinamento de</p>
+            <h3>SEGURANÇA DA INFORMAÇÃO & PROTEÇÃO DE DADOS</h3>
+            <p>Demonstrando conhecimento em LGPD, Phishing e Planos de Contingência.</p>
+            <div class="cert-footer">
+                <p>Data: <span id="cert-date"></span></p>
+                <p>Status: Aprovado (Score: <span id="cert-score"></span>%)</p>
+            </div>
+        </div>
+        <button onclick="window.print()" class="no-print">Imprimir / Salvar PDF</button>
+        <button onclick="location.reload()" class="no-print secondary">Voltar ao Início</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
