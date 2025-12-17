@@ -32,7 +32,7 @@ const missions = [
 ];
 
 // BANCO DE QUESTÕES
-// Embaralha e seleciona 10 questões aleatórias
+// Adicionando 15 questões
 const questionPool = [
     { q: "Qual o principal objetivo da Segurança da Informação?", options: ["Proteger a confidencialidade, integridade e disponibilidade", "Apenas fazer backups", "Monitorar redes sociais"], a: 0 },
     { q: "O que é Phishing?", options: ["Um vírus de computador", "Uma técnica de fraude via e-mail/msg", "Um firewall"], a: 1 },
